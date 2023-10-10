@@ -4,5 +4,6 @@ The objective of this data analysis project is to comprehensively evaluate the n
 
 To start off this analysis, I want to start by pivotting the nutritional componenets for the average, min, and max values per category.
 
-![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/76479775-1c81-49c0-b4e6-865b94dce650)
+![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/7503ab4d-a5de-450d-ae94-f136aad6e68b)
+
 
