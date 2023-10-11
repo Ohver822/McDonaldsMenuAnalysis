@@ -16,8 +16,8 @@ Lets identify the top 10 items with the highest and lowest calories from the men
 
 ![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/6c8cd28d-31a0-4a4d-a80d-1a638b58dc79)
 
-
-
+**Insight from visual:**
+Apple Slices stand out as the menu's most calorie-friendly option, containing just 15 calories, while the Chicken McNuggets (40-piece) top the list with the highest calorie content. This information is valuable for individuals striving to maintain a balanced diet as well as those seeking to increase their calorie intake.
 
 
 
