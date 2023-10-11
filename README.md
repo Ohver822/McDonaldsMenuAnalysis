@@ -7,7 +7,8 @@ The objective of this data analysis project is to comprehensively evaluate the n
 
 To commence this analysis, my first task is to identify the nutritional components and determine their Average, Minimum, and Maximum values in order to spot outliers among these three metrics.
 
-![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/7503ab4d-a5de-450d-ae94-f136aad6e68b)
+![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/4afb608b-fd3b-4640-8858-1d4e9cc0136e)
+
 
 Clearly, among all the food categories, 'Lunch & Dinner' stands out as the one with the highest calorie count, boasting an impressive 1,880 calories for one of my McDonald's food items. Another outlier of the category with the lowest calorie count lies in the 'Snacks & Desserts' category with light 15 calorie food item (water not included).
 
