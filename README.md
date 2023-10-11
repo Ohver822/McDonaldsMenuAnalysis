@@ -22,7 +22,7 @@ Apple Slices stand out as the menu's most calorie-friendly option, containing ju
 **Insight for Company:**
 These insights can be indicators to possible reevaluate the menu depending on business expectations and considfer offering more calorie friendly options, or including more items on the menu that can meet the standards of containing foods with high calories.
 
-
+#### Calories from Fat Analysis
 
 
 
