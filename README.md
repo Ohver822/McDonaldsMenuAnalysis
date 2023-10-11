@@ -12,7 +12,7 @@ To commence this analysis, my first task is to identify the nutritional componen
 
 Clearly, among all the food categories, 'Lunch & Dinner' stands out as the one with the highest calorie count, boasting an impressive 1,880 calories for one of my McDonald's food items. Another outlier of the category with the lowest calorie count lies in the 'Snacks & Desserts' category with light 15 calorie food item (water not included).
 
-### Lets identify the top 10 items with the highest and lowest calories from the menu.
+### Calorie Analysis (Low Vs High)
 
 ![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/6c8cd28d-31a0-4a4d-a80d-1a638b58dc79)
 
