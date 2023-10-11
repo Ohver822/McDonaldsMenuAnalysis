@@ -16,8 +16,13 @@ Clearly, among all the food categories, 'Lunch & Dinner' stands out as the one w
 
 ![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/f62697f4-4178-40ff-b62a-faba5381bdb2)
 
-**Insight from visual:**
+**Insight for Consumers:**
 Apple Slices stand out as the menu's most calorie-friendly option, containing just 15 calories, while the Chicken McNuggets (40-piece) top the list with the highest calorie content. This information is valuable for individuals striving to maintain a balanced diet as well as those seeking to increase their calorie intake.
+
+**Insight for Company:**
+These insights can be indicators to possible reevaluate the menu depending on business expectations and considfer offering more calorie friendly options, or including more items on the menu that can meet the standards of containing foods with high calories.
+
+
 
 
 
