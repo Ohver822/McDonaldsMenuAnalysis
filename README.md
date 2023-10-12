@@ -2,9 +2,18 @@
 
 **Introduction:** McDonald's is a globally known fast food resteraunt that's recognizable in 118 countries. This fast food chain has varouis menus that differ across each region and are known to have tasty food options raning from there Breakfast, Lunch, Dinner Beverages and Desserts. The question in mind for this analysis how healthy is the overall menu and are people aware of nutrition facts of the tasty menu. I retrieved a dataset from Kaggle.com in which I leveraged Excel to the verify integrirty of the data to ensure it's clean and ready for analysis. This dataset can be accessed here: https://www.kaggle.com/datasets/mcdonalds/nutrition-facts
 
-**Objective:** The objective of this data analysis project is to comprehensively evaluate the nutritional components of McDonald's menu items with the primary goal of identifying and highlighting the healthiest options available. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
+**Goal:** The objective of this data analysis project is to comprehensively evaluate the nutritional components of McDonald's menu items with the primary goal of identifying and highlighting the healthiest options available. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
 
-**Goal:** The goal of this data anaysis is to showcase the item's in the McDonald's menu that are unhealthy as an advisor for the company to replace unhealthy items with nutrition friendly alternatives.
+**Questions to answer:**
+
+What are average, minimum, and maximum values of the the nutritional components from the menu?
+What foods contain the highest calories? How many items contain more fat from calories than overall calories?
+What category of the menu contains the highest saturated fats? If an item has a high percentage saturated fats does it correlate to a rise in overall calories?
+What category of foods contains the highest sodium content? Does high sodium correlate with increase or decrease in carbohydrates or vice versa.
+Which category of foods contain the highest sugar amount? Does high sugar correlate with an increase in calories? 
+Which category of foods conain high proteins? What other nutritonal components influences high proteins?
+Idenitfy items with the highest content of each nutrition component, and the lowest of each nutritional component.
+If these foods were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
 
 
 ## Analysis of the Average, Minimum and Max values per category
