@@ -7,12 +7,19 @@
 **Questions to answer:**
 
 What are average, minimum, and maximum values of the the nutritional components from the menu?
+
 What foods contain the highest calories? How many items contain more fat from calories than overall calories?
+
 What category of the menu contains the highest saturated fats? If an item has a high percentage saturated fats does it correlate to a rise in overall calories?
+
 What category of foods contains the highest sodium content? Does high sodium correlate with increase or decrease in carbohydrates or vice versa.
+
 Which category of foods contain the highest sugar amount? Does high sugar correlate with an increase in calories? 
+
 Which category of foods conain high proteins? What other nutritonal components influences high proteins?
+
 Idenitfy items with the highest content of each nutrition component, and the lowest of each nutritional component.
+
 If these foods were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
 
 
