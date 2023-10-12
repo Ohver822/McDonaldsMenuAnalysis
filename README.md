@@ -1,5 +1,7 @@
 # Nutrition Analysis on McDonald's Menu
 
+**Intro:** McDonald's is a globally known fast food resteraunt that's recognizable in 118 countries. This fast food chain has varouis menus that differ across each region and are known to have tasty food options raning from there Breakfast, Lunch, Dinner Beverages and Desserts. The question in mind for this analysis how healthy is the overall menu and are people aware of nutrition facts of the tasty menu. I retrieved a dataset from Kaggle.com in which I leveraged Excel to the integrirty of the data to ensure it's clean for analysis.
+
 **Objective:** The objective of this data analysis project is to comprehensively evaluate the nutritional components of McDonald's menu items with the primary goal of identifying and highlighting the healthiest options available. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
 
 **Goal:** The goal of this data anaysis is to showcase the item's in the McDonald's menu that are unhealthy as an advisor for the company to replace unhealthy items with nutrition friendly alternatives.
