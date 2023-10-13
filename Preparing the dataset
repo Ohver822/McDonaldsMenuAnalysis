@@ -1,1 +1,23 @@
+Preparing the dataset
+
+Before anaylysis, I leveraged Excel to ensure there weren't any cells that could've cause potential inaccurcies
+or errors when querying in SQL. Just to be even more sure I queryed the data set to ensure there werent any NULL values.
+This dataset is mainly nutrtioanl components which means if there were blanks cells they'd have to be reviewed to in order
+to input the correct value of the nutrtional component.
+
+-- Checking my dataset for null values
+
+--Check for any NULL values
+SELECT COUNT(*) AS null_count
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+WHERE Category IS NULL OR Item IS NULL OR Serving_Size IS NULL OR Calories IS NULL OR Calories_from_Fat IS NULL OR Total_fat IS NULL OR Total_Fat_Daily_Percentage IS NULL OR Saturated_Fat IS NULL
+OR Saturated_Fat_Daily_Percentage IS NULL OR Trans_Fat IS NULL OR Cholesterol IS NULL OR Cholesterol_Daily_Percentage IS NULL OR Sodium IS NULL OR Sodium_Daily_Percentage IS NULL OR Carbohydrates IS NULL OR Carbohydrates_Daily_Percentage IS NULL 
+OR [Dietary Fiber] IS NULL OR Dietary_Fiber_Daily_Percentage IS NULL OR Sugars IS NULL OR Protein IS NULL OR Vitamin_A_Daily_Percentage IS NULL OR Vitamin_C_Daily_Percentage IS NULL
+OR Calcium_Daily_Percentage IS NULL OR Iron_Daily_Percentage IS NULL;
+
+Result:
+
+null_count
+0
+
 
