@@ -8,21 +8,23 @@
 
 **Questions to answer:**
 
-What are average, minimum, and maximum values of the the nutritional components from the menu?
+How many different categories are in this dataset? How many items are in this dataset? How many items are there per category?
 
-What foods contain the highest calories? How many items contain more fat from calories than overall calories?
+What are the average, minimum, and maximum values of the the nutritional components from the menu?
 
-What category of the menu contains the highest saturated fats? If an item has a high percentage saturated fats does it correlate to a rise in overall calories?
+Which category from the menu contain the highest calories? How many items contain more fat from calories than overall calories?
 
-What category of foods contains the highest sodium content? Does high sodium correlate with increase or decrease in carbohydrates or vice versa.
+Which category of the menu contains the highest saturated fats? If an item has a high percentage saturated fats does it correlate to a rise in overall calories?
 
-Which category of foods contain the highest sugar amount? Does high sugar correlate with an increase in calories? 
+Which category of foods contains the highest sodium content? Does high sodium correlate with increase or decrease in carbohydrates or vice versa.
 
-Which category of foods conain high proteins? What other nutritonal components influences high proteins?
+Which category of foods contains the highest sugar amount? Does high amount of sugar correlate with an increase in calories? 
 
-Idenitfy items with the highest content of each nutrition component, and the lowest of each nutritional component.
+Which category of foods conain high proteins? Does high amount of protein correlate with an increase in calories?
 
-If these foods were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
+Query items with the highest content of each nutrition component, and the lowest of each nutritional component.
+
+If the items with the max nutrtional componenets were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
 
 
 ## Analysis of the Average, Minimum and Max values per category
