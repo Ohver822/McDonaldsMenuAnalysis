@@ -1,11 +1,11 @@
 Preparing the dataset
 
-Before anaylysis, I leveraged Excel to ensure there weren't any cells that could've cause potential inaccurcies
-or errors when querying in SQL. Just to be even more sure I queryed the data set to ensure there werent any NULL values.
-This dataset is mainly nutrtioanl components which means if there were blanks cells they'd have to be reviewed to in order
-to input the correct value of the nutrtional component.
+Before anaylysis, I leveraged Excel to review the data and ensure there weren't any cells that could cause potential inaccurcies
+or errors when querying in SQL. Just to be 100% certain, I queryed the data set to ensure there weren't NULL values.
+This dataset is mainly nutrtioanl components which means if there were blank or null values they'd have to be reviewed to in order
+and inputted manually before this analysis.
 
--- Checking my dataset for null values
+Checking my dataset for null values
 
 --Check for any NULL values
 SELECT COUNT(*) AS null_count
@@ -16,8 +16,38 @@ OR [Dietary Fiber] IS NULL OR Dietary_Fiber_Daily_Percentage IS NULL OR Sugars I
 OR Calcium_Daily_Percentage IS NULL OR Iron_Daily_Percentage IS NULL;
 
 Result:
-
 null_count
 0
 
+Recategorizing the dataset.
+
+This dataset originally was grouped into 9 categories; Breakfast, Beef & Pork, Chicken & Fish, Salads, Snacks & Sides, Desserts, Coffee & Tea,
+Smoothies & Shakes, and Beverages. I decided to recategorize the data into four categories to analyze the data based on the time of day these meals were being consumed. Firstly,
+I created a parent column for these categories to be stored in, and I assigned all Breakfast items to remaing as breakfast.
+The categories Beef & Pork, Chicken & Fish, and Salads were assigned to Lunch & Dinner. Smoothies & Shakes and Coffee & Tea were reassigned 
+to the beverages category to be analyzed as a whole.
+
+--Add a parent column to categorize food items into four categories
+
+ALTER TABLE McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+ADD [Meal_Type] VARCHAR(255);
+
+--Update the four categories
+UPDATE McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+SET [Meal_Type] = 
+    CASE 
+        WHEN [Category] = 'Breakfast' THEN 'Breakfast'
+        WHEN [Category] = 'Beef & Pork' THEN 'Lunch & Dinner'
+		WHEN [Category] = 'Chicken & Fish' THEN 'Lunch & Dinner'
+		WHEN [Category] = 'Salads' THEN 'Lunch & Dinner'
+		WHEN [Category] = 'Snacks & Sides' THEN 'Snacks & Desserts'
+		WHEN [Category] = 'Desserts' THEN 'Snacks & Desserts'
+		WHEN [Category] = 'Smoothies & Shakes' THEN 'Beverages'
+    WHEN [Category] = 'Coffee & Tea' THEN 'Beverages'
+    WHEN [Category] = 'Beverages' THEN 'Beverages'
+        ELSE 'Unknown' -- Default value if 'Category' doesn't match any of the cases
+    END;
+
+Result:
+(260 rows affected)
 
