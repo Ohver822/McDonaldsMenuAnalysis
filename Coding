@@ -140,17 +140,164 @@ Reesult: 32 items
 /* Breakfast contains the highest Fat from calorie items, there are 32 items total that contain 50% or
 more fat from from calories, which accounts for 12% Percent of the menu.*\
 
-4. Which category of the menu contains the highest saturated fats? 
+4. Which category of the menu contains items with the highest saturated fats? 
+
+SELECT TOP 10 Meal_type, COUNT(*) AS HighSatItemCount
+FROM(
+	SELECT 
+		TOP 10 Meal_Type, item, calories, saturated_fat
+	FROM 
+		McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+	ORDER BY saturated_fat DESC
+	) AS SUBTHREE
+	GROUP BY Meal_Type
+
+Result:
+Meal_type	HighSatItemCount
+Beverages	4
+Breakfast	4
+Lunch & Dinner	2
+
+If an item has a high percentage saturated fats does it correlate to a rise in calories?
+
+WITH MaxQuery AS(
+
+SELECT  TOP 10 Meal_Type, item, calories, Max(saturated_fat) AS SatFat
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+WHERE calories > 0 AND saturated_fat > 0 
+GROUP BY Meal_Type, item, calories, saturated_fat
+ORDER BY SatFat DESC
+), 
+
+MinQuery AS (
+    SELECT TOP 10 Meal_Type, item, calories, MIN(saturated_fat) AS SatFat
+    FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+    WHERE calories > 0 AND saturated_fat <> 0
+	GROUP BY Meal_Type, item, calories, saturated_fat
+	ORDER BY SatFat ASC
+)
+
+SELECT *
+FROM MaxQuery
+UNION
+SELECT *
+FROM MinQuery
+ORDER BY SatFat DESC
+
+Meal_Type	item	calories	SatFat
+Beverages	FrappÃ© Chocolate Chip (Large)	760	20
+Beverages	McFlurry with M&Mâ€™s Candies (Medium)	930	20
+Breakfast	Big Breakfast with Hotcakes (Large Biscuit)	1150	20
+Lunch & Dinner	Chicken McNuggets (40 piece)	1880	20
+Breakfast	Big Breakfast with Hotcakes (Regular Biscuit)	1090	19
+Lunch & Dinner	Double Quarter Pounder with Cheese	750	19
+Breakfast	Big Breakfast (Large Biscuit)	800	18
+Beverages	FrappÃ© Caramel (Large)	670	17
+Beverages	FrappÃ© Chocolate Chip (Medium)	630	17
+Beverages	FrappÃ© Mocha (Large)	670	17
+Beverages	1% Low Fat Milk Jug	100	1.5
+Breakfast	Fruit & Maple Oatmeal	290	1.5
+Breakfast	Fruit & Maple Oatmeal without Brown Sugar	260	1.5
+Breakfast	Hash Brown	150	1.5
+Snacks & Desserts	Fruit 'n Yogurt Parfait	150	1
+Snacks & Desserts	Kids French Fries	110	1
+Snacks & Desserts	Kids Ice Cream Cone	45	1
+Beverages	Blueberry Pomegranate Smoothie (Large)	340	0.5
+Beverages	Mango Pineapple Smoothie (Large)	340	0.5
+Beverages	Strawberry Banana Smoothie (Large)	330	0.5
 
 
-If an item has a high percentage saturated fats does it correlate to a rise in overall calories?
+/*Beverages and Breakfast are tied when comparing the Top 10 items with the highest saturated fats. The result of
+comparing the Top 10 items with highest saturated fats vs Top 10 items with lowest saturated fats, clearly shows an 
+increase in calories when items in fact contain high satruated fats.*\
 
+5. Which category of foods contains the highest sodium content? 
 
+SELECT Meal_type, COUNT(*) as HighSodiumItems
+FROM(
+SELECT 
+	TOP 10 Meal_type, item, calories, sodium
+FROM 
+	McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, item, calories, sodium
+ORDER BY sodium DESC
+) AS SUBFOUR
+GROUP BY Meal_type
 
+Result:
+Meal_type	HighSodiumItems
+Breakfast	7
+Lunch & Dinner	3
 
-5. Which category of foods contains the highest sodium content? Does high sodium correlate with increase or decrease in carbohydrates or vice versa.
+Do the High Sodium items surpass the daily reccomendation of consuming 2,300 grams of sodium?
 
-6. Which category of foods contains the highest sugar amount? Does high amount of sugar correlate with an increase in calories?
+SELECT 
+	TOP 10 Meal_type, item, calories, sodium
+FROM 
+	McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, item, calories, sodium
+ORDER BY sodium DESC
+
+Result:
+Meal_type	item	calories	sodium
+Lunch & Dinner	Chicken McNuggets (40 piece)	1880	3600
+Breakfast	Big Breakfast with Hotcakes and Egg Whites (Large Biscuit)	1050	2290
+Breakfast	Big Breakfast with Hotcakes (Large Biscuit)	1150	2260
+Breakfast	Big Breakfast with Hotcakes and Egg Whites (Regular Biscuit)	990	2170
+Breakfast	Big Breakfast with Hotcakes (Regular Biscuit)	1090	2150
+Lunch & Dinner	Chicken McNuggets (20 piece)	940	1800
+Lunch & Dinner	Bacon Clubhouse Crispy Chicken Sandwich	750	1720
+Breakfast	Big Breakfast with Egg Whites (Large Biscuit)	690	1700
+Breakfast	Big Breakfast (Large Biscuit)	800	1680
+Breakfast	Big Breakfast with Egg Whites (Regular Biscuit)	640	1590
+
+/*Breakfast once again is the winner for containing High sodium content in there items. One out of the 10
+high sodium items do not meet the reccomended standard of consumption. However, the least amount of sodium out of
+the top 10 contains 1,590 mg which is only leaves them with 710 mg of sodium to consume with the remaider of there meals.
+*\
+
+6. Which category of foods contains the highest sugar amount? 
+
+SELECT Meal_type, COUNT(*) as HighSugarCount
+FROM(
+    SELECT TOP 10 Meal_type, Item, calories, Sugars
+    FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY 
+    Meal_type, Item, calories, Sugars
+ORDER BY 
+    Sugars DESC
+) AS SUBFIVE
+GROUP BY 
+    Meal_type
+
+Result:
+
+Meal_type	HighSugarCount
+Beverages	10
+
+Do the items have any commonalities with the other items that contained high calorie, saturated fat, and sodium?
+
+SELECT TOP 10 Meal_type, Item, calories, Saturated_Fat, Sodium, Sugars
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, Item, calories, Saturated_Fat, Sodium, Sugars
+ORDER BY Sugars DESC
+
+Result:
+
+Meal_type	Item	calories	Saturated_Fat	Sodium	Sugars
+Beverages	McFlurry with M&Mâ€™s Candies (Medium)	930	20	260	128
+Beverages	Strawberry Shake (Large)	850	15	260	123
+Beverages	Chocolate Shake (Large)	850	15	380	120
+Beverages	Shamrock Shake (Large)	820	15	260	115
+Beverages	McFlurry with Reese's Peanut Butter Cups (Medium)	810	15	400	103
+Beverages	Vanilla Shake (Large)	820	15	260	101
+Beverages	Strawberry Shake (Medium)	690	13	210	100
+Beverages	FrappÃ© Chocolate Chip (Large)	760	20	200	99
+Beverages	Chocolate Shake (Medium)	700	12	300	97
+Beverages	Shamrock Shake (Medium)	660	12	210	93
+
+/* The McFlurry with M&Mâ€™s Candies (Medium) and FrappÃ© Chocolate Chip (Large) were also a part of the top 10
+items with the high saturated fats. Beverages was the top category with the highest sugar contents.
 
 7. Which category of foods conain high proteins? Does high amount of protein correlate with an increase in calories?
 
