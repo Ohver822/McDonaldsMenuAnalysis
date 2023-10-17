@@ -2,7 +2,7 @@ And the analysis begins!!!
 
 Questions to answer:
 
-1. How many items are in this dataset? How many items are there per category?
+1. How many items are in this dataset? How many items are there per meal type?
 
 SELECT Meal_type, COUNT(ITEM) as item_count
 FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
@@ -20,8 +20,8 @@ Total of 260 items on the menu.
 
 2. What are the average, minimum, and maximum values of the the nutritional components from the menu?
 
-Side Note: These values were pivotted and took up numerous lines of code, I will be posting my file, 
-for review on a seperate file. For visibility purposes I will not be posting the pivot code on here.
+Side Note: These values were pivotted and took up numerous lines of code, I will be posting my SQL file, 
+for review seperately. For visibility purposes I will not be posting the SQL code on here of this pivot.
 
 Results:
 
@@ -58,9 +58,11 @@ Max_Sugars_G	32	16	48	128
 Max_Total_fat_G	60	118	24	33
 Max_Trans_fat_G	2	3	0	2
 
-3. What are the Top 10 items from the menu with the highest calories? 
-What are the Top 10 items from the menu with the lowest calories?
+3. Identify the meal type with the highest calories.
 
+--pending
+
+What are the Top 10 items from the menu with the highest calories? 
 --Top 10 Items with the highest calories
 
 SELECT TOP 10 Meal_Type, item, max(calories) AS highCalories
@@ -71,7 +73,6 @@ GROUP BY Meal_Type, item
 ORDER BY highCalories DESC
 
 Result:
-
 Meal_Type	item	highCalories
 Lunch & Dinner	Chicken McNuggets (40 piece)	1880
 Breakfast	Big Breakfast with Hotcakes (Large Biscuit)	1150
@@ -84,6 +85,7 @@ Beverages	Chocolate Shake (Large)	850
 Beverages	Strawberry Shake (Large)	850
 Beverages	Shamrock Shake (Large)	820
 
+What are the Top 10 items from the menu with the lowest calories?
 --Top 10 Items with the lowest calories
 
 SELECT 
@@ -94,6 +96,7 @@ WHERE
 GROUP BY Meal_Type, item
 ORDER BY MinCalories ASC
 
+Result:
 Meal_Type	item	MinCalories
 Snacks & Desserts	Apple Slices	15
 Snacks & Desserts	Side Salad	20
@@ -106,8 +109,8 @@ Beverages	Dr Pepper (Child)	100
 Beverages	Nonfat Latte (Small)	100
 Beverages	Sprite (Child)	100
 
-/*The highest calorie item on the menu is: Lunch & Dinner	Chicken McNuggets (40 piece)	1880, the lowest calorie item
-on the menu (0 calories item not included), is: Snacks & Desserts	Apple Slices	15.
+/*The highest calorie item on the menu is: Lunch & Dinner Chicken McNuggets (40 piece)	1880, the lowest calorie item
+on the menu (0 calories item not included), is: Snacks & Desserts Apple Slices 15.
 
 4. How many items contain more than 50% of fat from calories than overall calories?
 
@@ -135,12 +138,12 @@ Lunch & Dinner	9
 Beverages	3
 Snacks & Desserts	1
 
-Reesult: 32 items
+Result: 32 items
 
 /* Breakfast contains the highest Fat from calorie items, there are 32 items total that contain 50% or
 more fat from from calories, which accounts for 12% Percent of the menu.*\
 
-4. Which category of the menu contains items with the highest saturated fats? 
+Identify the the meal type with the highest saturated fats.
 
 SELECT TOP 10 Meal_type, COUNT(*) AS HighSatItemCount
 FROM(
@@ -211,7 +214,52 @@ Beverages	Strawberry Banana Smoothie (Large)	330	0.5
 comparing the Top 10 items with highest saturated fats vs Top 10 items with lowest saturated fats, clearly shows an 
 increase in calories when items in fact contain high satruated fats.*\
 
-5. Which category of foods contains the highest sodium content? 
+Identify meal type with the items containing high total fats.
+
+SELECT Meal_type, COUNT(*) as TotalFatCount
+FROM(
+SELECT TOP 10 Meal_type, Item, calories, Total_Fat
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, Item, calories, Total_Fat
+ORDER BY Total_Fat DESC
+) AS SUBEIGHT
+GROUP BY Meal_type
+
+Meal_type	TotalFatCount
+Breakfast	7
+Lunch & Dinner	3
+
+
+Do these items have correlations with high calorie items?
+
+
+SELECT TOP 10 *
+FROM(
+	SELECT TOP 10 Meal_type, Item, calories, Total_Fat
+	FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, Item, calories, Total_Fat
+ORDER BY Total_Fat DESC
+) AS SUBEIGHT
+GROUP BY Meal_type, Item, calories, Total_Fat
+
+Result: 
+Meal_type	Item	calories	Total_Fat
+Lunch & Dinner	Chicken McNuggets (40 piece)	1880	118
+Breakfast	Big Breakfast with Hotcakes (Large Biscuit)	1150	60
+Lunch & Dinner	Chicken McNuggets (20 piece)	940	59
+Breakfast	Big Breakfast with Hotcakes (Regular Biscuit)	1090	56
+Breakfast	Big Breakfast (Large Biscuit)	800	52
+Breakfast	Big Breakfast with Hotcakes and Egg Whites (Large Biscuit)	1050	50
+Breakfast	Big Breakfast (Regular Biscuit)	740	48
+Breakfast	Big Breakfast with Hotcakes and Egg Whites (Regular Biscuit)	990	46
+Lunch & Dinner	Double Quarter Pounder with Cheese	750	43
+Breakfast	Big Breakfast with Egg Whites (Large Biscuit)	690	41
+
+
+/*Breakfast contains the foods with the highest fats. Items with high fats do in fact have a correlation with items containing high caloric values*\. 
+
+
+Identify the meal type with the highest sodium content.
 
 SELECT Meal_type, COUNT(*) as HighSodiumItems
 FROM(
@@ -256,7 +304,7 @@ high sodium items do not meet the reccomended standard of consumption. However, 
 the top 10 contains 1,590 mg which is only leaves them with 710 mg of sodium to consume with the remaider of there meals.
 *\
 
-6. Which category of foods contains the highest sugar amount? 
+Identify the meal type that contains highest sugar value.
 
 SELECT Meal_type, COUNT(*) as HighSugarCount
 FROM(
@@ -275,7 +323,7 @@ Result:
 Meal_type	HighSugarCount
 Beverages	10
 
-Do the items have any commonalities with the other items that contained high calorie, saturated fat, and sodium?
+Do the items have any correlations with the other items that contained high calorie, saturated fat, and sodium?
 
 SELECT TOP 10 Meal_type, Item, calories, Saturated_Fat, Sodium, Sugars
 FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
@@ -299,8 +347,87 @@ Beverages	Shamrock Shake (Medium)	660	12	210	93
 /* The McFlurry with M&Mâ€™s Candies (Medium) and FrappÃ© Chocolate Chip (Large) were also a part of the top 10
 items with the high saturated fats. Beverages was the top category with the highest sugar contents.
 
-7. Which category of foods conain high proteins? Does high amount of protein correlate with an increase in calories?
+Identify the meal type that contains highest protein items? 
 
-8. Query items with the highest content of each nutrition component, and the lowest of each nutritional component.
+SELECT Meal_type, COUNT(*) as HighProteinCount
+FROM(
+	SELECT TOP 10 Meal_type, Item, calories, protein
+	FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, Item, calories, protein 
+ORDER BY protein DESC
+) AS SUBSIX
+GROUP BY Meal_type
 
-9. If the items with the max nutrtional componenets were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
+Result: 
+Meal_type	HighProteinCount
+Breakfast	2
+Lunch & Dinner	8
+
+Which items contain the highest percentage of protein from calories?
+
+SELECT TOP 10 *
+FROM(
+SELECT Meal_type, Item, calories, Protein, (protein*4/calories)*100 AS ProteinFromCalories
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+WHERE Protein > 1 AND calories > 0
+) AS SUBSEVEN
+ORDER BY ProteinFromCalories DESC
+
+Result: 
+Meal_type	Item	calories	Protein	ProteinFromCalories
+Lunch & Dinner	Premium Bacon Ranch Salad with Grilled Chicken	220	29	52.7272727272727
+Beverages	Nonfat Latte (Small)	100	10	40
+Beverages	Nonfat Latte (Large)	170	16	37.6470588235294
+Lunch & Dinner	Premium Southwest Salad with Grilled Chicken	290	27	37.2413793103448
+Beverages	Nonfat Latte (Medium)	130	12	36.9230769230769
+Lunch & Dinner	Premium Grilled Chicken Classic Sandwich	350	28	32
+Lunch & Dinner	Premium Grilled Chicken Ranch BLT Sandwich	450	36	32
+Beverages	1% Low Fat Milk Jug	100	8	32
+Lunch & Dinner	Premium Grilled Chicken Club Sandwich	510	40	31.3725490196078
+Lunch & Dinner	Premium McWrap Chicken & Bacon (Grilled Chicken)	480	36	30
+
+/* Lunch & Dinner contain items with the highest amount of calories. There is 1 item on the menu that contains MORE than 50 percent of calories
+being protein, three beverage items contain more than 30 percent of calories being protein 
+
+
+8. Identify Meal type that contains items with the high cholestrol. 
+
+SELECT Meal_type, COUNT(*) as HighProteinCount
+FROM(
+SELECT TOP 10 Meal_type, Item, calories, Total_Fat, Cholesterol
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, Item, calories, Total_Fat, Cholesterol
+ORDER BY Cholesterol DESC
+) AS SUBSEVEN
+GROUP BY Meal_type
+
+Result: 
+Meal_type	HighProteinCount
+Breakfast	10
+
+Do these items correlate with high values of fats and calories?
+
+SELECT TOP 10 Meal_type, Item, calories, Total_Fat, Cholesterol
+FROM McDonaldsNutritionAnalysis.dbo.Md_Nutrition
+GROUP BY Meal_type, Item, calories, Total_Fat, Cholesterol
+ORDER BY Cholesterol DESC
+
+Meal_type	Item	calories	Total_Fat	Cholesterol
+Breakfast	Big Breakfast with Hotcakes (Large Biscuit)	1150	60	575
+Breakfast	Big Breakfast with Hotcakes (Regular Biscuit)	1090	56	575
+Breakfast	Big Breakfast (Large Biscuit)	800	52	555
+Breakfast	Big Breakfast (Regular Biscuit)	740	48	555
+Breakfast	Steak & Egg McMuffin	430	23	300
+Breakfast	Steak, Egg & Cheese Bagel	670	35	295
+Breakfast	Sausage McMuffin with Egg	450	28	285
+Breakfast	Steak & Egg Biscuit (Regular Biscuit)	540	32	280
+Breakfast	Bacon, Egg & Cheese Bagel	620	31	275
+Breakfast	Sausage, Egg & Cheese McGriddles	550	31	265
+
+Result: /*Breakfast items once again are in the top for containing foods with highest nutritional component. A large value of cholestrol des in fact correlate with high fats and calories, four
+items from this menu are a part of the items that contain the highest total fats.
+
+
+
+10. Query items with the highest content of each nutrition component, and the lowest of each nutritional component.
+
