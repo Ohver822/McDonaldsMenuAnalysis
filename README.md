@@ -1,10 +1,10 @@
-# McDonald's Menu: Nutrition Analysis
+# McDonald's Menu: Caloric Analysis
 
-**Introduction:** McDonald's is a globally known fast food resteraunt that's recognizable in 118 countries. This fast food chain has varouis menus that differ across each region and are known to have tasty food options raning from there Breakfast, Lunch, Dinner Beverages and Desserts. The question in mind for this analysis how healthy is the overall menu and are people aware of nutrition facts of the tasty menu. I retrieved a dataset from Kaggle.com in which I leveraged Excel to the verify integrirty of the data to ensure it's clean and ready for analysis. This dataset can be accessed here: https://www.kaggle.com/datasets/mcdonalds/nutrition-facts 
+**Introduction:** McDonald's is a globally known fast food resteraunt that's recognizable in 118 countries. This fast food chain has varouis menus that differ across each region and are known to have tasty food options raning from there Breakfast, Lunch, Dinner Beverages and Desserts. For this menu analysis, we are exploring the correlation between nutritional components and calorie values. I retrieved a dataset from Kaggle.com in which I leveraged Excel to the verify integrirty of the data to ensure it's clean and ready for analysis. This dataset can be accessed here: https://www.kaggle.com/datasets/mcdonalds/nutrition-facts 
 
 **Tools used for analysis:** Excel, SQL and Tableau.
 
-**Goal:** The goal of this data analysis project is to comprehensively evaluate the nutritional components of the McDonald's menu items with the primary goal of identifying the healthiest and unhealthiest item's from the menu. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
+**Goal:** In this data analysis project, the goal is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the healthiest and least healthy menu items based on their respective calorie values. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
 
 **Questions to answer:**
 
