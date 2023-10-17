@@ -27,30 +27,3 @@ Query items with the highest content of each nutrition component, and the lowest
 If the items with the max nutrtional componenets were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
 
 **Preparing the data:** I leveraged Excel prior to jumping into this analysis to ensure that the dataset was clean and did not contain any cells that can cause potential inaccuracies when querying the data in SQL. This dataset originally was grouped into 7 categories being Breakfast, Beef & Pork, Chicken & Fish, Salads, Snacks & Sides, Desserts, and Beverages. To consolidate the categories and be able to analyze the data, I utilized SQL to create a new column in which I recategorized Beef & Pork, Chicken & Fish, and Salads as Lunch & Dinner. The reason being is because these catergories are normally ordered in the afternoon to the evening, and consolidating these categories into one gives a better overview of the nutrtional componenets specifically for meals that are consumed later in the day. Same goes for the Snacks & Sides, I recategorized these items into one category being Snacks & Deserts for the same reasons, these foods are normally consumed later in the day and this gives a better overview of the nutritional componenets. To summarize my preperation, my dataset is going to analyze four categories of food items being, Breakfast, Lunch & Dinner, Snacks & Sides and Beverages. By consolidating these categories is going to give straightforward insights of the menu and how the nutritonal components differ from one another.
-
-## Analysis of the Average, Minimum and Max values per category
-
-To commence this analysis, my first task is to identify the nutritional components and determine their Average, Minimum, and Maximum values in order to spot outliers among these three metrics.
-
-![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/f32eac87-7a38-4af5-bfdf-41d59c2d3bf6)
-
-
-Clearly, among all the food categories, 'Lunch & Dinner' stands out as the one with the highest calorie count, boasting an impressive 1,880 calories for one of my McDonald's food items. Another outlier of the category with the lowest calorie count lies in the 'Snacks & Desserts' category with light 15 calorie food item (water not included).
-
-### Calorie Analysis (Low Vs High)
-
-![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/f62697f4-4178-40ff-b62a-faba5381bdb2)
-
-**Insight for Consumers:**
-Apple Slices stand out as the menu's most calorie-friendly option, containing just 15 calories, while the Chicken McNuggets (40-piece) top the list with the highest calorie content. This information is valuable for individuals striving to maintain a balanced diet as well as those seeking to increase their calorie intake.
-
-**Insight for Company:**
-These insights can be indicators to possible reevaluate the menu depending on business expectations and considfer offering more calorie friendly options, or including more items on the menu that can meet the standards of containing foods with high calories.
-
-### Calories from Fat Analysis (Low Vs High)
-
-![image](https://github.com/Ohver822/McDonaldsMenuAnalysis/assets/86633487/8efc407a-b00e-48f6-a566-f697ba151c37)
-
-**Insight for Consumers:**
-
-**Insight for Company:**
