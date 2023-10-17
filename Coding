@@ -428,6 +428,13 @@ Result: /*Breakfast items once again are in the top for containing foods with hi
 items from this menu are a part of the items that contain the highest total fats.
 
 
+10. Query the meal type with the most items containing highest nutrtion value per component.
 
-10. Query items with the highest content of each nutrition component, and the lowest of each nutritional component.
+
+
+
+
+
+
+
 
