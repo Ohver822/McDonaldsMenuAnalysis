@@ -6,6 +6,10 @@
 
 **Goal:** In this data analysis project, the goal is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the healthiest and least healthy menu items based on their respective calorie values. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
 
+**Metrics:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomended values we will use our own custom formula using Excel to retrieve our metric value that will be used for each item in the dataset.
+Metirc Formula =(AVERAGE(2500,2000)/3)
+Metric for this analysis: **750 calories**
+
 **Questions to answer:**
 
 How many items are in this dataset? How many items are there per meal type?
