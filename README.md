@@ -8,22 +8,20 @@
 
 **Questions to answer:**
 
-How many different categories are in this dataset? How many items are in this dataset? How many items are there per category?
+How many items are in this dataset? How many items are there per meal type?
 
-What are the average, minimum, and maximum values of the the nutritional components from the menu?
+What are the maximum values of the the nutritional components from the menu?
 
-Which category from the menu contain the highest calories? How many items contain more fat from calories than overall calories?
+Which top 10 item contains the highest amount of calories?
 
-Which category of the menu contains the highest saturated fats? If an item has a high percentage saturated fats does it correlate to a rise in overall calories?
+Do the top 5 items with the highest Trans Fat, Saturated Fat, & Total Fat exceed 800 calories? If an item has high Total Fat does it correlate to a rise in overall calories?
 
-Which category of foods contains the highest sodium content? Does high sodium correlate with increase or decrease in carbohydrates or vice versa.
+Do the top 5 items with the highest sodium exceed 800 calories? 
 
-Which category of foods contains the highest sugar amount? Does high amount of sugar correlate with an increase in calories? 
+Do the top 5 items with highest protein exceed 800 calories? 
 
-Which category of foods conain high proteins? Does high amount of protein correlate with an increase in calories?
 
-Query items with the highest content of each nutrition component, and the lowest of each nutritional component.
 
-If the items with the max nutrtional componenets were consumed three times in one day, does it meet the standard of consuming on average 2,000 calories per day?
+
 
 **Preparing the data:** I leveraged Excel prior to jumping into this analysis to ensure that the dataset was clean and did not contain any cells that can cause potential inaccuracies when querying the data in SQL. This dataset originally was grouped into 7 categories being Breakfast, Beef & Pork, Chicken & Fish, Salads, Snacks & Sides, Desserts, and Beverages. To consolidate the categories and be able to analyze the data, I utilized SQL to create a new column in which I recategorized Beef & Pork, Chicken & Fish, and Salads as Lunch & Dinner. The reason being is because these catergories are normally ordered in the afternoon to the evening, and consolidating these categories into one gives a better overview of the nutrtional componenets specifically for meals that are consumed later in the day. Same goes for the Snacks & Sides, I recategorized these items into one category being Snacks & Deserts for the same reasons, these foods are normally consumed later in the day and this gives a better overview of the nutritional componenets. To summarize my preperation, my dataset is going to analyze four categories of food items being, Breakfast, Lunch & Dinner, Snacks & Sides and Beverages. By consolidating these categories is going to give straightforward insights of the menu and how the nutritonal components differ from one another.
