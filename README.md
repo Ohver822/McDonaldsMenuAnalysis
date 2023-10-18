@@ -16,14 +16,17 @@ How many items are in this dataset? How many items are there per meal type?
 
 What are the maximum values of the the nutritional components from the menu?
 
-Which top 10 item contains the highest amount of calories?
+Which top 10 items contain the highest amount of calories?
 
-Do the top 5 items with the highest Trans Fat, Saturated Fat, & Total Fat exceed 800 calories? If an item has high Total Fat does it correlate to a rise in overall calories?
+Which meal type contains the most items exceeding 750 calories?
 
-Do the top 5 items with the highest sodium exceed 800 calories? 
+How many items contain more than 750 calories? Which items are they?
 
-Do the top 5 items with highest protein exceed 800 calories? 
+Do the top 5 items with the highest Trans Fat, Saturated Fat, & Total Fat exceed 750 calories? If an item has high Total Fat does it correlate to a rise in overall calories?
 
+Do the top 5 items with the highest sodium exceed 750 calories calories? 
+
+Do the top 5 items with highest protein exceed 750 calories? 
 
 
 
