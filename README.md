@@ -4,9 +4,9 @@
 
 **Tools used for analysis:** Excel, SQL and Tableau.
 
-**Goal:** In this data analysis project, the goal is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the healthiest and least healthy menu items based on their respective calorie values. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself in promoting healthier food choices.
+**Goal:** In this data analysis project, the goal is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items exceeding 750 calories, based on their respective nutrition values. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself.
 
-**Metrics:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomended values we will use our own custom formula using Excel to retrieve our metric value that will be used for each item in the dataset.
+**Metris:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomendedations I will use Excel to retrieve the metric value that will be used for this analysis.
 Metirc Formula =(AVERAGE(2500,2000)/3)
 Metric for this analysis: **750 calories**
 
@@ -16,18 +16,21 @@ How many items are in this dataset? How many items are there per meal type?
 
 What are the maximum values of the the nutritional components from the menu?
 
-Which top 10 items contain the highest amount of calories?
+What are the top 5 highest calorie items per meal type?
 
 Which meal type contains the most items exceeding 750 calories?
 
 How many items contain more than 750 calories? Which items are they?
 
-Do the top 5 items with the highest Trans Fat, Saturated Fat, & Total Fat exceed 750 calories? If an item has high Total Fat does it correlate to a rise in overall calories?
+Do the top 5 items with the highest Trans Fat, Saturated Fat, & Total Fat exceed 750 calories? 
 
-Do the top 5 items with the highest sodium exceed 750 calories calories? 
+If an item has high fat from calories does it correlate to a rise in overall calories?
 
-Do the top 5 items with highest protein exceed 750 calories? 
+At which percentage of fat does an item start exceeding 750 calories?
 
+Do the top 5 items with the highest sodium, carbohydrates and protein exceed 750 calories calories? 
+
+Categorize items by calorie ranges: 0-299, 300-599, 600-749, 750 or more.
 
 
 
