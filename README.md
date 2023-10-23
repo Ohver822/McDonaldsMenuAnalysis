@@ -1,12 +1,12 @@
 # McDonald's Menu: Caloric Analysis
 
-**Introduction:** McDonald's is a globally known fast food resteraunt that's recognizable in 118 countries. This fast food chain has varouis menus that differ across each region and are known to have tasty food options raning from there Breakfast, Lunch, Dinner Beverages and Desserts. For this menu analysis, we are exploring the correlation between nutritional components and calorie values. I retrieved a dataset from Kaggle.com in which I leveraged Excel to the verify integrirty of the data to ensure it's clean and ready for analysis. This dataset can be accessed here: https://www.kaggle.com/datasets/mcdonalds/nutrition-facts 
+**Introduction:** McDonald's is a globally known fast food resteraunt that's recognizable in 118 countries. This fast food chain is known to have tasty food options across their menu. For this project I will be conducting a calorie analysis to see how high calorie items correlate with other nutrtional components. I retrieved a dataset from Kaggle.com in which I leveraged Excel to the verify integrirty of the data to ensure it's clean and ready for analysis. This dataset can be accessed here: https://www.kaggle.com/datasets/mcdonalds/nutrition-facts 
 
 **Tools used for analysis:** Excel, SQL and Tableau.
 
-**Goal:** In this data analysis project, the goal is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items exceeding 750 calories, based on their respective nutrition values. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself.
+**Goal:** The goal of this project is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items exceeding 750 calories, and identify which other nutritional components correlate with these high calorie items. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself.
 
-**Metris:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomendedations I will use Excel to retrieve the metric value that will be used for this analysis.
+**Metric:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomendedations I will use Excel to retrieve the metric value that will be used for this analysis.
 Metirc Formula =(AVERAGE(2500,2000)/3)
 Metric for this analysis: **750 calories**
 
@@ -14,7 +14,7 @@ Metric for this analysis: **750 calories**
 
 How many items are in this dataset? How many items are there per meal type?
 
-What are the maximum values of the the nutritional components from the menu?
+What are the maximum calories for each Category?
 
 What are the top 5 highest calorie items per meal type?
 
