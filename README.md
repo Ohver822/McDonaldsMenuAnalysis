@@ -4,7 +4,7 @@
 
 **Tools used for analysis:** Excel, SQL and Tableau.
 
-**Goal:** The goal of this project is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items exceeding 750 calories, and identify which other nutritional components correlate with these high calorie items. McDonald's is one of the largest and most popular fast-food chains globally, and understanding the nutritional profile of its menu items can provide valuable insights for both consumers and the company itself.
+**Goal:** The goal of this project is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items exceeding 750 calories, and see if the calorie value indicates that all other nutrtional components contain high values as well. 
 
 **Metric:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomendedations I will use Excel to retrieve the metric value that will be used for this analysis.
 Metirc Formula =(AVERAGE(2500,2000)/3)
@@ -18,13 +18,9 @@ What are the maximum calories for each Category?
 
 What are the top 5 highest calorie items per meal type?
 
-Which meal type contains the most items exceeding 750 calories?
-
 How many items contain more than 750 calories? Which items are they?
 
 Do the top 5 items with the highest Trans Fat, Saturated Fat, & Total Fat exceed 750 calories? 
-
-If an item has high fat from calories does it correlate to a rise in overall calories?
 
 At which percentage of fat does an item start exceeding 750 calories?
 
