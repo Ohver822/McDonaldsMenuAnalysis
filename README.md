@@ -4,11 +4,7 @@
 
 **Tools used for analysis:** Excel, SQL and Tableau.
 
-**Goal:** The goal of this project is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items exceeding 750 calories, and see if the calorie value indicates that all other nutrtional components contain high values as well. 
-
-**Metric:** The metric used for this project is going to be based on the calorie intake and meal consumption reccomended by the World Health Orginzation. Accoridng to the World Health Orginzaiton, the recommended calorie intake for Men is 2,500 calories and for women is 2,000 calories, divded across three balanced meals daily. Based on these reccomendedations I will use Excel to retrieve the metric value that will be used for this analysis.
-Metirc Formula =(AVERAGE(2500,2000)/3)
-Metric for this analysis: **750 calories**
+**Goal:** The goal of this project is to conduct a exploratory analysis of the nutritional elements within the McDonald's menu. The focus is to pinpoint the highest calorie items, and see if the calorie value indicates that all other nutrtional components contain high values as well. 
 
 **Questions to answer:**
 
